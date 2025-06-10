@@ -7,6 +7,7 @@ import UserRoutes from '@routes/UserRoutes';
 import PlaceDetail from '@pages/user/PlaceDetail';
 import PlaceReservationList from '@pages/admin/PlaceReservationList';
 import Place from '@pages/user/Place';
+import BookPage from '@pages/user/BookPage';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route element={<UserRoutes />}>
           <Route path="/place" element={<Place />} />
           <Route path="/placeDetail" element={<PlaceDetail />} />
+          <Route path="/book" element={<BookPage />} />
         </Route>
       </Routes>
     </>
