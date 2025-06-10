@@ -5,6 +5,7 @@ import AdminRoutes from '@routes/AdminRoutes';
 import PlaceAdd from '@pages/admin/PlaceAdd';
 import UserRoutes from '@routes/UserRoutes';
 import PlaceDetail from '@pages/user/PlaceDetail';
+import PlaceReservationList from '@pages/admin/PlaceReservationList';
 
 function App() {
   return (
@@ -13,11 +14,15 @@ function App() {
         <Route element={<AdminRoutes />}>
           <Route path="/placeList" element={<PlaceList />} />
           <Route path="/placeAdd" element={<PlaceAdd />} />
+          <Route
+            path="/placeReservationList"
+            element={<PlaceReservationList />}
+          />
         </Route>
       </Routes>
       <Routes>
         <Route element={<UserRoutes />}>
-          <Route path="/placeDetail" element={<PlaceDetail />}></Route>
+          <Route path="/placeDetail" element={<PlaceDetail />} />
         </Route>
       </Routes>
     </>
