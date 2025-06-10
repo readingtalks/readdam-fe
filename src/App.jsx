@@ -6,6 +6,7 @@ import PlaceAdd from '@pages/admin/PlaceAdd';
 import UserRoutes from '@routes/UserRoutes';
 import PlaceDetail from '@pages/user/PlaceDetail';
 import PlaceReservationList from '@pages/admin/PlaceReservationList';
+import Place from '@pages/user/Place';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       </Routes>
       <Routes>
         <Route element={<UserRoutes />}>
+          <Route path="/place" element={<Place />} />
           <Route path="/placeDetail" element={<PlaceDetail />} />
         </Route>
       </Routes>
