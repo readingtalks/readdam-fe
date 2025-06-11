@@ -96,12 +96,15 @@ export default function PlaceList() {
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 좋아요
               </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              {/* <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 등록일
-              </th>
+              </th> */}
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 상태
               </th>
+              {/* <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                관리
+              </th> */}
               <th className="px-6 py-3"></th>
             </tr>
           </thead>
@@ -151,7 +154,7 @@ export default function PlaceList() {
                     <span>{place.likes}</span>
                   </div>
                 </td>
-                <td className="px-6 py-4 text-gray-500">{place.createdAt}</td>
+                {/* <td className="px-6 py-4 text-gray-500">{place.createdAt}</td> */}
                 <td className="px-6 py-4">
                   <span
                     className={`px-2 py-1 rounded-full text-xs font-semibold text-nowrap ${
