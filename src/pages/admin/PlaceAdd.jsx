@@ -1,7 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { ArrowLeft, Upload, X, CheckSquare, Plus, Trash2 } from 'lucide-react';
+import { useNavigate } from 'react-router';
+import { UNSAFE_NavigationContext as NavigationContext } from 'react-router-dom';
+import { usePrompt } from '@hooks/usePrompt'; // 경로는 맞게 수정
 
-const PlaceAdd = () => {
+export default function PlaceAdd() {
   const [keywords, setKeywords] = useState([]);
   const [newKeyword, setNewKeyword] = useState('');
   const [imagePreview, setImagePreview] = useState(null);
@@ -48,6 +51,8 @@ const PlaceAdd = () => {
   const [weekdaySlots] = useState(generateTimeSlots());
   const [weekendSlots] = useState(generateTimeSlots());
   const [images, setImages] = useState([]);
+  const [isFormDirty, setIsFormDirty] = useState(false);
+  const navigate = useNavigate();
 
   const handleRoomImageUpload = (e) => {
     const file = e.target.files?.[0];
@@ -207,16 +212,38 @@ const PlaceAdd = () => {
   const handleRemoveImage = (indexToRemove) => {
     setImages((prev) => prev.filter((_, index) => index !== indexToRemove));
   };
+
+  // ✅ 브라우저 새로고침/닫기 방지
+  useEffect(() => {
+    const handleBeforeUnload = (e) => {
+      if (isFormDirty) {
+        e.preventDefault();
+        e.returnValue = '';
+      }
+    };
+    window.addEventListener('beforeunload', handleBeforeUnload);
+    return () => window.removeEventListener('beforeunload', handleBeforeUnload);
+  }, [isFormDirty]);
+
+  // ✅ 라우터 이동 방지
+  usePrompt(
+    '이 페이지를 벗어나시겠습니까? 작성하신 내용은 저장되지 않습니다.',
+    isFormDirty
+  );
+
   return (
     <div className="p-6 max-w-4xl mx-auto">
       <div className="flex items-center gap-4 mb-8">
         <button className="p-2 hover:bg-gray-100 rounded-lg">
-          <ArrowLeft className="w-6 h-6" />
+          <ArrowLeft
+            className="w-6 h-6"
+            onClick={() => navigate('/placeList')}
+          />
         </button>
         <h1 className="text-2xl font-bold">새 장소 추가</h1>
       </div>
 
-      <form className="space-y-8">
+      <form className="space-y-8" onChange={() => setIsFormDirty(true)}>
         {/* 기본 정보 */}
         <section className="bg-white p-6 rounded-lg shadow">
           <h2 className="text-lg font-semibold mb-6">기본 정보</h2>
@@ -687,6 +714,4 @@ const PlaceAdd = () => {
       </form>
     </div>
   );
-};
-
-export default PlaceAdd;
+}
