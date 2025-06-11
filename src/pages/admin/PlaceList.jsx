@@ -6,9 +6,12 @@ import {
   FilterIcon,
   MapPinIcon,
 } from 'lucide-react';
+import { useNavigate } from 'react-router';
 
 export default function PlaceList() {
   const [searchTerm, setSearchTerm] = useState('');
+  const navigate = useNavigate();
+
   const places = [
     {
       id: 1,
@@ -49,7 +52,10 @@ export default function PlaceList() {
     <div className="p-6 max-w-7xl mx-auto overflow-x-auto">
       <div className="flex justify-between items-center mb-8">
         <h1 className="text-2xl font-bold text-gray-800">장소 관리</h1>
-        <button className="flex items-center gap-2 px-4 py-2 bg-[#006989] text-white rounded-lg hover:bg-[#005C78] transition-all duration-200 cursor-pointer">
+        <button
+          className="flex items-center gap-2 px-4 py-2 bg-[#006989] text-white rounded-lg hover:bg-[#005C78] transition-all duration-200 cursor-pointer"
+          onClick={() => navigate('/placeAdd')}
+        >
           <PlusIcon className="w-5 h-5" />새 장소 추가
         </button>
       </div>
