@@ -105,7 +105,7 @@ export default function OtherPlaceAdd() {
         <button className="p-2 hover:bg-gray-100 rounded-lg">
           <ArrowLeft
             className="w-6 h-6"
-            onClick={() => navigate('/placeList')}
+            onClick={() => navigate('/otherPlaceList')}
           />
         </button>
         <h1 className="text-2xl font-bold">외부 장소 추가</h1>
