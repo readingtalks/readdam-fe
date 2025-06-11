@@ -8,6 +8,7 @@ import PlaceDetail from '@pages/user/PlaceDetail';
 import PlaceReservationList from '@pages/admin/PlaceReservationList';
 import Place from '@pages/user/Place';
 import BookPage from '@pages/user/BookPage';
+import OtherPlaceAdd from '@pages/admin/OtherPlaceAdd';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             path="/placeReservationList"
             element={<PlaceReservationList />}
           />
+          <Route path="/otherPlaceAdd" element={<OtherPlaceAdd />} />
         </Route>
       </Routes>
       <Routes>
