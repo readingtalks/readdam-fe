@@ -10,6 +10,7 @@ import Place from '@pages/user/Place';
 import BookPage from '@pages/user/BookPage';
 import OtherPlaceAdd from '@pages/admin/OtherPlaceAdd';
 import OtherPlaceList from '@pages/admin/OtherPlaceList';
+import BookSearch from '@pages/user/BookSearch';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route path="/place" element={<Place />} />
           <Route path="/placeDetail" element={<PlaceDetail />} />
           <Route path="/book" element={<BookPage />} />
+          <Route path="/bookSearch" element={<BookSearch />} />
         </Route>
       </Routes>
     </>
