@@ -84,9 +84,9 @@ const PointCharge = () => {
       </div>
 
       {/* 🟦 Toss Payments 결제 수단 선택 위젯 */}
-      <div id="payment-method" className="my-6" />
+      {/* <div id="payment-method" className="my-6" /> */}
       {/* 🔐 약관 동의 */}
-      <div id="agreement" className="mb-6" />
+      {/* <div id="agreement" className="mb-6" /> */}
 
       <div className="border p-4 rounded mb-6 bg-gray-50">
         <p className="text-sm text-gray-600 mb-1">

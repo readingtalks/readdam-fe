@@ -21,7 +21,7 @@ const groupedSidebarItems = [
         items: [
             { label: '나의 서재', icon: BookmarkIcon, path: '/myLibrary' },
             { label: '좋아요', icon: HeartIcon, path: '/myLikeClass' },
-            { label: '나의 모임', icon: UsersIcon, path: '/myClass' },
+            { label: '나의 모임', icon: UsersIcon, path: '/myClassContinue' },
         ],
     },
     {
@@ -34,8 +34,8 @@ const groupedSidebarItems = [
     {
         category: '리뷰',
         items: [
-            { label: '책 리뷰', icon: BookOpenIcon, path: '/myBookReview' },
-            { label: '모임리뷰', icon: UsersIcon, path: '/myClassReview' },
+            { label: '책 리뷰', icon: BookOpenIcon, path: '/myReviewBook' },
+            { label: '모임리뷰', icon: UsersIcon, path: '/myReviewClass' },
         ],
     },
     {
@@ -80,25 +80,43 @@ const MyLayout = ({ children }) => {
                                         {group.category}
                                     </h3>
                                 )}
-                                {group.items.map(({ label, icon: Icon, path }) => (
-                                    <NavLink
-                                        to={path}
-                                        key={path}
-                                        className={({ isActive }) =>
-                                            `w-full flex items-center px-6 py-2 text-sm transition-colors ${isActive
-                                                ? 'bg-[#EB8F6A] text-white font-medium'
-                                                : 'text-gray-700 hover:bg-gray-100'
-                                            }`
-                                        }
-                                    >
-                                        <Icon className="w-4 h-4" />
-                                        <span className="ml-3">{label}</span>
-                                    </NavLink>
-                                ))}
+                                {group.items.map(({ label, icon: Icon, path }) => {
+                                    const isLikeGroupActive =
+                                        label === '좋아요' &&
+                                        location.pathname.startsWith('/myLike');
+                                    
+                                    const isClassGroupActive =
+                                        label === '나의 모임' &&
+                                        location.pathname.startsWith('/myClass');
+                                    
+                                    const isWriteGroupActive =
+                                        label === '내가 쓴 글' &&
+                                        (location.pathname === '/myWrite' || location.pathname === '/myWriteShort');
+
+
+                                    return (    
+                                        <NavLink
+                                            to={path}
+                                            key={path}
+                                            className={({ isActive }) =>
+                                                `w-full flex items-center px-6 py-2 text-sm transition-colors ${isActive || isLikeGroupActive || isClassGroupActive || isWriteGroupActive
+                                                    ? 'bg-[#EB8F6A] text-white font-medium'
+                                                    : 'text-gray-700 hover:bg-gray-100'
+                                                }`
+                                            }
+                                        >
+                                            <Icon className="w-4 h-4" />
+                                            <span className="ml-3">{label}</span>
+                                        </NavLink>
+                                    );
+                                })}
+
                             </div>
                         ))}
                     </div>
                 </div>
+
+
 
                 {/* Main Content */}
                 <div className="flex-1 p-8 overflow-y-auto">{children}</div>
