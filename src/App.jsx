@@ -33,6 +33,13 @@ import SearchResult from '@pages/user/SearchResult';
 import WriteList from '@pages/user/WriteList';
 import WriteShortList from '@pages/user/WriteShortList';
 
+import PlaceReservationList from '@pages/admin/PlaceReservationList';
+import Place from '@pages/user/Place';
+import BookPage from '@pages/user/BookPage';
+import OtherPlaceAdd from '@pages/admin/OtherPlaceAdd';
+import OtherPlaceList from '@pages/admin/OtherPlaceList';
+import BookSearch from '@pages/user/BookSearch';
+import BookDetail from '@pages/user/BookDetail';
 
 function App() {
   return (
@@ -41,6 +48,12 @@ function App() {
         <Route element={<AdminRoutes />}>
           <Route path="/placeList" element={<PlaceList />} />
           <Route path="/placeAdd" element={<PlaceAdd />} />
+          <Route
+            path="/placeReservationList"
+            element={<PlaceReservationList />}
+          />
+          <Route path="/otherPlaceAdd" element={<OtherPlaceAdd />} />
+          <Route path="/otherPlaceList" element={<OtherPlaceList />} />
         </Route>
       </Routes>
       <Routes>
@@ -76,6 +89,11 @@ function App() {
           <Route path="/myPointList" element={<MyPointList />}></Route>
           <Route path="/myAlert" element={<MyAlert />}></Route>
           <Route path="/myInquiry" element={<MyInquiry />}></Route>
+          <Route path="/place" element={<Place />} />
+          <Route path="/placeDetail" element={<PlaceDetail />} />
+          <Route path="/book" element={<BookPage />} />
+          <Route path="/bookSearch" element={<BookSearch />} />
+          <Route path="/bookDetail" element={<BookDetail />} />
         </Route>
       </Routes>
     </>
