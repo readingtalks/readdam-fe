@@ -32,6 +32,9 @@ import Home from '@pages/user/Home';
 import SearchResult from '@pages/user/SearchResult';
 import WriteList from '@pages/user/WriteList';
 import WriteShortList from '@pages/user/WriteShortList';
+import Notice from '@pages/user/Notice';
+import WriteDetail from '@pages/user/WriteDetail';
+import WriteCreate from '@pages/user/WriteCreate';
 
 
 function App() {
@@ -53,6 +56,9 @@ function App() {
           <Route path="/search" element={<SearchResult />} />
           <Route path="/writeList" element={<WriteList />} />
           <Route path="/writeShortList" element={<WriteShortList />} />
+          <Route path="/notice" element={<Notice />} />
+          <Route path="/writeDetail" element={<WriteDetail />} />
+          <Route path="/writeCreate" element={<WriteCreate />} />
         </Route>
       </Routes>
       <Routes>
