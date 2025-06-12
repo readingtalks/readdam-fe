@@ -59,41 +59,40 @@ function App() {
       <Routes>
         <Route element={<UserRoutes />}>
           <Route path="/join" element={<Join />} />
-          <Route path="/placeDetail" element={<PlaceDetail />}></Route>
-          <Route path="/login" element={<Login />}></Route>
-          <Route path="/token" element={<Token />}></Route>
+          <Route path="/placeDetail" element={<PlaceDetail />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/token" element={<Token />} />
           <Route path="/" element={<Home />} />
           <Route path="/search" element={<SearchResult />} />
           <Route path="/writeList" element={<WriteList />} />
           <Route path="/writeShortList" element={<WriteShortList />} />
+          <Route path="/place" element={<Place />} />
+          <Route path="/book" element={<BookPage />} />
+          <Route path="/bookSearch" element={<BookSearch />} />
+          <Route path="/bookDetail" element={<BookDetail />} />
         </Route>
       </Routes>
       <Routes>
         <Route element={<MyRoutes />}>
-          <Route path="/myProfile" element={<MyProfile />}></Route>
-          <Route path="/myLibrary" element={<MyLibrary />}></Route>
-          <Route path="/myLikeClass" element={<MyLikeClass />}></Route>
-          <Route path="/myLikePlace" element={<MyLikePlace />}></Route>
-          <Route path="/myLikeWrite" element={<MyLikeWrite />}></Route>
-          <Route path="/myLikeBook" element={<MyLikeBook />}></Route>
-          <Route path="/myClassContinue" element={<MyClassContinue />}></Route>
-          <Route path="/myClassEnd" element={<MyClassEnd />}></Route>
-          <Route path="/myClassIMade" element={<MyClassIMade />}></Route>
-          <Route path="/myWrite" element={<MyWrite />}></Route>
-          <Route path="/myWriteComment" element={<MyWriteComment />}></Route>
-          <Route path="/myWriteShort" element={<MyWriteShort />}></Route>
-          <Route path="/myReviewBook" element={<MyReviewBook />}></Route>
-          <Route path="/myReviewClass" element={<MyReviewClass />}></Route>
-          <Route path="/myReservation" element={<MyReservation />}></Route>
-          <Route path="/myPointCharge" element={<MyPointCharge />}></Route>
-          <Route path="/myPointList" element={<MyPointList />}></Route>
-          <Route path="/myAlert" element={<MyAlert />}></Route>
-          <Route path="/myInquiry" element={<MyInquiry />}></Route>
-          <Route path="/place" element={<Place />} />
-          <Route path="/placeDetail" element={<PlaceDetail />} />
-          <Route path="/book" element={<BookPage />} />
-          <Route path="/bookSearch" element={<BookSearch />} />
-          <Route path="/bookDetail" element={<BookDetail />} />
+          <Route path="/myProfile" element={<MyProfile />} />
+          <Route path="/myLibrary" element={<MyLibrary />} />
+          <Route path="/myLikeClass" element={<MyLikeClass />} />
+          <Route path="/myLikePlace" element={<MyLikePlace />} />
+          <Route path="/myLikeWrite" element={<MyLikeWrite />} />
+          <Route path="/myLikeBook" element={<MyLikeBook />} />
+          <Route path="/myClassContinue" element={<MyClassContinue />} />
+          <Route path="/myClassEnd" element={<MyClassEnd />} />
+          <Route path="/myClassIMade" element={<MyClassIMade />} />
+          <Route path="/myWrite" element={<MyWrite />} />
+          <Route path="/myWriteComment" element={<MyWriteComment />} />
+          <Route path="/myWriteShort" element={<MyWriteShort />} />
+          <Route path="/myReviewBook" element={<MyReviewBook />} />
+          <Route path="/myReviewClass" element={<MyReviewClass />} />
+          <Route path="/myReservation" element={<MyReservation />} />
+          <Route path="/myPointCharge" element={<MyPointCharge />} />
+          <Route path="/myPointList" element={<MyPointList />} />
+          <Route path="/myAlert" element={<MyAlert />} />
+          <Route path="/myInquiry" element={<MyInquiry />} />
         </Route>
       </Routes>
     </>
