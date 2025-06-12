@@ -1,12 +1,11 @@
 import React from 'react'
 import {
   HeartIcon,
-  MessageSquareIcon,
   ClockIcon,
-  FlagIcon,
   PenIcon,
 } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
+import singoIcon from '@assets/singo.png';
 
 const WriteShortList = () => {
   const navigate = useNavigate()
@@ -139,10 +138,6 @@ const WriteShortList = () => {
                     <HeartIcon className="w-4 h-4" />
                     <span>{answer.likes}</span>
                   </button>
-                  <button className="flex items-center gap-1 text-gray-600">
-                    <MessageSquareIcon className="w-4 h-4" />
-                    <span>{answer.comments}</span>
-                  </button>
                 </div>
               </div>
               <p className="text-gray-700 text-sm line-clamp-5">
@@ -152,7 +147,7 @@ const WriteShortList = () => {
                 onClick={() => handleReport(answer.id)}
                 className="absolute bottom-4 right-4 text-gray-400 hover:text-gray-600"
               >
-                <FlagIcon className="w-4 h-4" />
+                <img src={singoIcon} alt="신고" className="w-4 h-4" />
               </button>
             </div>
           ))}
