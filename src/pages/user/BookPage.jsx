@@ -138,7 +138,7 @@ const BookPage = () => {
                 <input
                   type="text"
                   placeholder="도서, 작가, 출판사 검색하세요"
-                  className="w-full md:w-80 px-4 py-2 pl-10 bg-white bg-opacity-20 border border-white border-opacity-30 rounded-lg focus:outline-none text-white placeholder-white placeholder-opacity-70"
+                  className="w-full md:w-80 px-4 py-2 pl-10 bg-white/20 border border-white border-opacity-30 rounded-lg focus:outline-none text-white placeholder-white text-opacity-70"
                 />
                 <SearchIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-white" />
               </div>
