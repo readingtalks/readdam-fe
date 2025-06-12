@@ -8,8 +8,6 @@ import {
 import singoIcon from '@assets/singo.png';
 
 const HomeShort = () => {
-  const [activeTab, setActiveTab] = useState('oneliner');
-
 
   const dummyAnswers = [
     { id: 1, author: '책벌레123', content: '삶이 그대를 속일지라도 슬퍼하거나 노하지 말라...', likes: 12, color: 'mint' },
@@ -49,7 +47,7 @@ const HomeShort = () => {
           {dummyAnswers.map((answer) => (
             <div
               key={answer.id}
-              className={`${getPostItColor(answer.color)} aspect-square p-6 rounded-sm shadow-md hover:shadow-lg transition-shadow relative`}
+              className={`${getPostItColor(answer.color)} aspect-square p-6 rounded-sm shadow-md hover:shadow-lg transition-shadow relative transform hover:-rotate-1 hover:translate-y-[-2px]`}
               style={{
                 boxShadow: '2px 2px 5px rgba(0,0,0,0.1)',
                 backgroundImage: 'linear-gradient(180deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%)',
