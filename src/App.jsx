@@ -16,21 +16,6 @@ import MyAlert from '@pages/my/MyAlert';
 import MyInquiry from '@pages/my/MyInquiry';
 import MyPointList from '@pages/my/MyPointList';
 import Join from '@pages/user/Join';
-import MyClassContinue from '@pages/my/MyClassContinue';
-import MyClassEnd from '@pages/my/MyClassEnd';
-import MyClassIMade from '@pages/my/MyClassIMade';
-import MyWrite from '@pages/my/MyWrite';
-import MyWriteComment from '@pages/my/MyWriteComment';
-import MyWriteShort from '@pages/my/MyWriteShort';
-import MyReviewBook from '@pages/my/MyReviewBook';
-import MyReviewClass from '@pages/my/MyReviewClass';
-import MyReservation from '@pages/my/MyReservation';
-import MyLibrary from '@pages/my/MyLibrary';
-import Login from '@pages/user/Login';
-import Token from '@pages/user/Token';
-
-
-
 
 function App() {
   return (
@@ -45,32 +30,6 @@ function App() {
         <Route element={<UserRoutes />}>
           <Route path="/join" element={<Join />} />
           <Route path="/placeDetail" element={<PlaceDetail />}></Route>
-          <Route path="/login" element={<Login />}></Route>
-          <Route path="/token" element={<Token />}></Route>
-        </Route>
-      </Routes>
-      <Routes>
-        <Route element={<MyRoutes />}>
-          <Route path="/myProfile" element={<MyProfile />}></Route>
-          <Route path="/myLibrary" element={<MyLibrary />}></Route>
-          <Route path="/myLikeClass" element={<MyLikeClass />}></Route>
-          <Route path="/myLikePlace" element={<MyLikePlace />}></Route>
-          <Route path="/myLikeWrite" element={<MyLikeWrite />}></Route>
-          <Route path="/myLikeBook" element={<MyLikeBook />}></Route>
-          <Route path="/myClassContinue" element={<MyClassContinue />}></Route>
-          <Route path="/myClassEnd" element={<MyClassEnd />}></Route>
-          <Route path="/myClassIMade" element={<MyClassIMade />}></Route>
-          <Route path="/myWrite" element={<MyWrite />}></Route>
-          <Route path="/myWriteComment" element={<MyWriteComment />}></Route>
-          <Route path="/myWriteShort" element={<MyWriteShort />}></Route>
-          <Route path="/myReviewBook" element={<MyReviewBook />}></Route>
-          <Route path="/myReviewClass" element={<MyReviewClass />}></Route>
-          <Route path="/myReservation" element={<MyReservation />}></Route>
-
-          <Route path="/myPointCharge" element={<MyPointCharge />}></Route>
-          <Route path="/myPointList" element={<MyPointList />}></Route>
-          <Route path="/myAlert" element={<MyAlert />}></Route>
-          <Route path="/myInquiry" element={<MyInquiry />}></Route>
         </Route>
       </Routes>
     </>
