@@ -1,10 +1,11 @@
 import AddToLibraryModal from '@components/book/AddToLibraryModal';
-import { SearchIcon, StarIcon } from 'lucide-react';
+import { SearchIcon, StarIcon, HeartIcon } from 'lucide-react';
 import { useState } from 'react';
 
 export default function BookSearch() {
   const [searchTerm, setSearchTerm] = useState('미움받을 용기');
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [liked, setLiked] = useState(false);
 
   const book = {
     title: '미움받을 용기',
@@ -19,7 +20,7 @@ export default function BookSearch() {
 
   return (
     <>
-      <div className="max-w-4xl mx-auto p-6 pt-20 text-sm font-sans">
+      <div className="max-w-5xl mx-auto p-6 pt-20 pb-20 text-sm font-sans">
         {/* 검색창 */}
         <div className="flex items-center space-x-2 mb-8">
           <select className="border px-2 h-10 rounded text-sm text-gray-700">
@@ -34,7 +35,7 @@ export default function BookSearch() {
               type="text"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full border border-[#E88D67] rounded pl-8 h-10 pr-4 text-sm"
+              className="w-full border border-[#E88D67] rounded pl-8 h-10 pr-4 text-sm focus:outline-none "
             />
           </div>
           <button className="bg-[#E88D67] text-white w-16 h-10 rounded text-sm">
@@ -48,12 +49,8 @@ export default function BookSearch() {
         </div>
 
         {/* 결과 카드 */}
-        <div className="flex items-start border-t pt-4 gap-4">
-          <img
-            src={book.image}
-            alt={book.title}
-            className=" object-cover border"
-          />
+        <div className="flex items-start border-t py-8 gap-4 border-b border-[#D9D9D9] relative">
+          <img src={book.image} alt={book.title} className="object-cover" />
           <div className="flex flex-col text-sm text-gray-800">
             <div className="font-bold text-base mb-1">{book.title}</div>
             <div className="mb-1">저자 | {book.author}</div>
@@ -62,12 +59,17 @@ export default function BookSearch() {
 
             <div className="flex items-center text-[#E88D67] mb-2 text-sm">
               <StarIcon
-                className={`w-6 h-6 ${'text-[#E88D67] fill-[#E88D67]'}`}
+                className={`w-4 h-4 ${'text-[#E88D67] fill-[#E88D67]'} mr-2`}
               />
-              <span>{book.rating}</span>
+              <span className="text-black">{book.rating}</span>
               <span className="text-gray-600 ml-1">({book.reviews})</span>
             </div>
-
+            <HeartIcon
+              className={`w-6 h-6 ${
+                liked ? 'fill-[#E88D67] text-[#E88D67]' : 'text-gray-400'
+              } absolute top-8 right-8`}
+              onClick={() => setLiked(!liked)}
+            />
             <button
               className="bg-[#006989] text-white w-24 h-10 rounded-lg text-xs font-bold cursor-pointer"
               onClick={() => setIsModalOpen(!isModalOpen)}
@@ -76,7 +78,27 @@ export default function BookSearch() {
             </button>
           </div>
         </div>
+        <div className="flex justify-center mt-6">
+          <nav className="flex items-center gap-2">
+            <button className="px-3 py-1 text-sm border rounded hover:bg-gray-50">
+              이전
+            </button>
+            <button className="px-3 py-1 text-sm bg-[#006989] text-white rounded">
+              1
+            </button>
+            <button className="px-3 py-1 text-sm border rounded hover:bg-gray-50">
+              2
+            </button>
+            <button className="px-3 py-1 text-sm border rounded hover:bg-gray-50">
+              3
+            </button>
+            <button className="px-3 py-1 text-sm border rounded hover:bg-gray-50">
+              다음
+            </button>
+          </nav>
+        </div>
       </div>
+
       {isModalOpen && (
         <AddToLibraryModal onClose={() => setIsModalOpen(!isModalOpen)} />
       )}
