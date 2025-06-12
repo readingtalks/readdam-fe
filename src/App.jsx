@@ -40,6 +40,8 @@ import OtherPlaceAdd from '@pages/admin/OtherPlaceAdd';
 import OtherPlaceList from '@pages/admin/OtherPlaceList';
 import BookSearch from '@pages/user/BookSearch';
 import BookDetail from '@pages/user/BookDetail';
+import PlaceEdit from '@pages/admin/PlaceEdit';
+import OtherPlaceEdit from '@pages/admin/OtherPlaceEdit';
 
 function App() {
   return (
@@ -54,6 +56,8 @@ function App() {
           />
           <Route path="/otherPlaceAdd" element={<OtherPlaceAdd />} />
           <Route path="/otherPlaceList" element={<OtherPlaceList />} />
+          <Route path="/placeEdit" element={<PlaceEdit />} />
+          <Route path="/otherPlaceEdit" element={<OtherPlaceEdit />} />
         </Route>
       </Routes>
       <Routes>
