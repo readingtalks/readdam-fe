@@ -16,7 +16,7 @@ const Join = () => {
     passwordConfirm: '',
     phone: '',
     email: '',
-    birthdate: '',
+    birth: '',
     introduction: '',
   });
 
@@ -120,11 +120,11 @@ const Join = () => {
                 <div className="space-y-4">
                   {[
                     ['name', '이름'],
+                    ['email', '이메일'],
                     ['nickname', '닉네임'],
                     ['password', '비밀번호'],
                     ['passwordConfirm', '비밀번호 확인'],
                     ['phone', '전화번호'],
-                    ['email', '이메일'],
                   ].map(([name, label]) => (
                     <div key={name}>
                       <label className="block text-sm font-medium text-gray-700 mb-1">
