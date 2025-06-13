@@ -4,6 +4,7 @@ import { AdminSidebar } from '../components/AdminSidebar';
 import PlaceAdd from '@pages/admin/PlaceAdd';
 import Footer from '@components/Footer';
 import { Outlet } from "react-router-dom";
+import AdminInquiryList from '@pages/admin/AdminInquiryList';
 
 const sidebarMenus = [
   {
@@ -52,7 +53,7 @@ const sidebarMenus = [
 ];
 
 export function AdminLayout() {
-  const [sidebarMenus, setSidebarMenus] = useState('places');
+  const [sidebarMenus, setSidebarMenus] = useState('');
   return (
     <>
       {/* 상단 관리자 헤더 */}
@@ -67,6 +68,7 @@ export function AdminLayout() {
           <main className="flex-1 overflow-auto p-6">
             <Outlet />
             {sidebarMenus === 'places' && <PlaceAdd />}
+            {sidebarMenus === 'inquiries' && <AdminInquiryList />}
 
 
           </main>

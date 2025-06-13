@@ -48,11 +48,14 @@ const sidebarMenus = [
     title: '이벤트',
     icon: <PencilIcon className="w-4 h-4 mr-2" />,
     path:"#",
-    submenus: []
+    submenus: [
+      {name: '이벤트 등록/포인트 지급', path: "/adminEventReg"}, 
+      {name: '이벤트 참여 내역 조회', path:"/adminPlaceReservation"}
+    ]
   }, {
     title: '1:1문의/피드백',
     icon: <MessageCircleQuestion className="w-4 h-4 mr-2" />,
-    path:"#",
+    path:"/adminInquiryList",
     submenus: []
   }, {
     title: '배너',
