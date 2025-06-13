@@ -46,21 +46,6 @@ const HomeClass = () => {
           <h2 className="text-3xl font-bold text-gray-800">
             최근 등록된 독서모임
           </h2>
-          <div className="flex gap-2">
-            <select className="px-4 py-2 border border-gray-300 rounded-lg text-gray-700">
-              <option>전체 지역</option>
-              <option>서울</option>
-              <option>경기</option>
-              <option>인천</option>
-            </select>
-            <select className="px-4 py-2 border border-gray-300 rounded-lg text-gray-700">
-              <option>전체 테마</option>
-              <option>에세이</option>
-              <option>심리</option>
-              <option>자기계발</option>
-              <option>문학</option>
-            </select>
-          </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {groups.map((group) => (
