@@ -45,6 +45,7 @@ import BookSearch from '@pages/user/BookSearch';
 import BookDetail from '@pages/user/BookDetail';
 import PlaceEdit from '@pages/admin/PlaceEdit';
 import OtherPlaceEdit from '@pages/admin/OtherPlaceEdit';
+import WriteModify from '@pages/user/WriteModify';
 
 function App() {
   return (
@@ -80,6 +81,7 @@ function App() {
           <Route path="/notice" element={<Notice />} />
           <Route path="/writeDetail" element={<WriteDetail />} />
           <Route path="/writeCreate" element={<WriteCreate />} />
+          <Route path="/writeModify" element={<WriteModify />} />
         </Route>
       </Routes>
       <Routes>
