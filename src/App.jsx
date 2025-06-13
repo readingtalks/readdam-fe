@@ -32,6 +32,9 @@ import Home from '@pages/user/Home';
 import SearchResult from '@pages/user/SearchResult';
 import WriteList from '@pages/user/WriteList';
 import WriteShortList from '@pages/user/WriteShortList';
+import Notice from '@pages/user/Notice';
+import WriteDetail from '@pages/user/WriteDetail';
+import WriteCreate from '@pages/user/WriteCreate';
 
 import PlaceReservationList from '@pages/admin/PlaceReservationList';
 import Place from '@pages/user/Place';
@@ -74,6 +77,9 @@ function App() {
           <Route path="/book" element={<BookPage />} />
           <Route path="/bookSearch" element={<BookSearch />} />
           <Route path="/bookDetail" element={<BookDetail />} />
+          <Route path="/notice" element={<Notice />} />
+          <Route path="/writeDetail" element={<WriteDetail />} />
+          <Route path="/writeCreate" element={<WriteCreate />} />
         </Route>
       </Routes>
       <Routes>
