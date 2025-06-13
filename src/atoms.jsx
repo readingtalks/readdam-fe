@@ -22,4 +22,9 @@ export const initUser = {
   
 
 export const userAtom = atomWithStorage("user", initUser, createJSONStorage(() => sessionStorage));
-export const tokenAtom = atomWithStorage("token", '', createJSONStorage(() => sessionStorage));
+export const tokenAtom = atomWithStorage(
+  "token",
+  { access_token: '', refresh_token: '' },
+  createJSONStorage(() => sessionStorage)
+);
+

@@ -73,8 +73,8 @@ const PointCharge = () => {
             key={opt.amount}
             onClick={() => setSelectedAmount(opt.amount)}
             className={`border rounded p-4 text-center ${opt.amount === selectedAmount
-                ? 'border-orange-500 text-orange-600 font-semibold'
-                : 'border-gray-300'
+              ? 'border-orange-500 text-orange-600 font-semibold'
+              : 'border-gray-300'
               }`}
           >
             <div>{opt.point}P</div>
@@ -84,9 +84,9 @@ const PointCharge = () => {
       </div>
 
       {/* 🟦 Toss Payments 결제 수단 선택 위젯 */}
-      {/* <div id="payment-method" className="my-6" /> */}
+      <div id="payment-method" className="my-6" />
       {/* 🔐 약관 동의 */}
-      {/* <div id="agreement" className="mb-6" /> */}
+      <div id="agreement" className="mb-6" />
 
       <div className="border p-4 rounded mb-6 bg-gray-50">
         <p className="text-sm text-gray-600 mb-1">
