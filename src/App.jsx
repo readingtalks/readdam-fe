@@ -32,6 +32,9 @@ import Home from '@pages/user/Home';
 import SearchResult from '@pages/user/SearchResult';
 import WriteList from '@pages/user/WriteList';
 import WriteShortList from '@pages/user/WriteShortList';
+import Notice from '@pages/user/Notice';
+import WriteDetail from '@pages/user/WriteDetail';
+import WriteCreate from '@pages/user/WriteCreate';
 
 import PlaceReservationList from '@pages/admin/PlaceReservationList';
 import Place from '@pages/user/Place';
@@ -42,11 +45,13 @@ import BookSearch from '@pages/user/BookSearch';
 import BookDetail from '@pages/user/BookDetail';
 import PlaceEdit from '@pages/admin/PlaceEdit';
 import OtherPlaceEdit from '@pages/admin/OtherPlaceEdit';
+import PrivateRoute from '@routes/PrivateRoute';
 
 function App() {
   return (
     <>
       <Routes>
+        <Route path="/token" element={<Token />} />
         <Route element={<AdminRoutes />}>
           <Route path="/placeList" element={<PlaceList />} />
           <Route path="/placeAdd" element={<PlaceAdd />} />
@@ -59,13 +64,12 @@ function App() {
           <Route path="/placeEdit" element={<PlaceEdit />} />
           <Route path="/otherPlaceEdit" element={<OtherPlaceEdit />} />
         </Route>
-      </Routes>
-      <Routes>
+
         <Route element={<UserRoutes />}>
           <Route path="/join" element={<Join />} />
           <Route path="/placeDetail" element={<PlaceDetail />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/token" element={<Token />} />
+
           <Route path="/" element={<Home />} />
           <Route path="/search" element={<SearchResult />} />
           <Route path="/writeList" element={<WriteList />} />
@@ -74,10 +78,13 @@ function App() {
           <Route path="/book" element={<BookPage />} />
           <Route path="/bookSearch" element={<BookSearch />} />
           <Route path="/bookDetail" element={<BookDetail />} />
+          <Route path="/notice" element={<Notice />} />
+          <Route path="/writeDetail" element={<WriteDetail />} />
+          <Route path="/writeCreate" element={<WriteCreate />} />
         </Route>
-      </Routes>
-      <Routes>
-        <Route element={<MyRoutes />}>
+
+        {/* <Route element={<PrivateRoute />}> */}
+          <Route element={<MyRoutes />}>
           <Route path="/myProfile" element={<MyProfile />} />
           <Route path="/myLibrary" element={<MyLibrary />} />
           <Route path="/myLikeClass" element={<MyLikeClass />} />
@@ -98,6 +105,7 @@ function App() {
           <Route path="/myAlert" element={<MyAlert />} />
           <Route path="/myInquiry" element={<MyInquiry />} />
         </Route>
+
       </Routes>
     </>
   );
