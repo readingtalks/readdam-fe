@@ -9,7 +9,7 @@ const sidebarMenus = [
     path: "",
     submenus: [
       {name: '회원 조회', path:"/adminUserList"}, 
-      {name: '탈퇴 회원', path:"/adminUserDeleted"}
+      {name: '탈퇴 회원', path:"/adminUserDeletedList"}
     ]
   }, {
     title: '모임',

@@ -10,7 +10,8 @@ const sidebarMenus = [
   {
     id: 'members',
     title: '회원',
-    submenus: ['회원 조회', '탈퇴회원']
+    submenus: [
+      '회원 조회', '탈퇴회원']
   }, {
     id: 'meetings',
     title: '모임',

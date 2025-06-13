@@ -7,12 +7,16 @@ import UserRoutes from '@routes/UserRoutes';
 import PlaceDetail from '@pages/user/PlaceDetail';
 import Join from '@pages/user/Join';
 import AdminInquiryList from '@pages/admin/AdminInquiryList';
+import AdminUserList from '@pages/admin/AdminUserList';
+import AdminUserDeletedList from '@pages/admin/AdminUserDeletedList';
 
 function App() {
   return (
     <>
       <Routes>
         <Route element={<AdminRoutes />}>
+          <Route path="/adminUserList" element={<AdminUserList />} />
+          <Route path="/adminUserDeletedList" element={<AdminUserDeletedList />} />
           <Route path="/placeList" element={<PlaceList />} />
           <Route path="/placeAdd" element={<PlaceAdd />} />
           <Route path='/adminInquiryList' element={<AdminInquiryList />}/>
